@@ -1,0 +1,1 @@
+同时使用 animate.css 和 transtion ，初次渲染，自定义过渡的类名，type 指定以 animation 时间为准。

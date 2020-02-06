@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  <style>
+    #app {
+      width: 600px;
+      margin: 0 auto;
+    }
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 2s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="show = !show">
+      Toggle
+    </button>
+    <transition
+      type="animation"
+      name="fade" 
+      appear
+      enter-active-class="animated tada fade-enter-active" 
+      leave-active-class="animated jello fade-leave-active"
+      appear-active-class="animated tada"
+    >
+      <p v-if="show">hello</p>
+    </transition>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        show: true
+      }
+    })
+  </script>
+</body>
+
+</html>
